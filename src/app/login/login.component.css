@@ -1,0 +1,10 @@
+.form-content{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
