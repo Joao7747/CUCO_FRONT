@@ -5,7 +5,7 @@ import { DoacoesComponent } from './historico/doacoes/doacoes.component';
 import { RetiradasComponent } from './historico/retiradas/retiradas.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
-import { MapaComponent } from './views/home/mapa/mapa.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 const routes: Routes = [
   {

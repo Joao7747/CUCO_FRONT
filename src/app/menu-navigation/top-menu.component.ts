@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-top-menu',
+  templateUrl: './top-menu.component.html',
+  styleUrls: ['./top-menu.component.css']
 })
-export class HomeComponent implements OnInit {
+export class TopMenuComponent implements OnInit {
   constructor() { }
 
   display = false;
@@ -35,5 +35,4 @@ export class HomeComponent implements OnInit {
       {label: 'Logout', icon: 'pi pi-fw pi-power-off', url: 'login'}
   ];
   }
-
 }
