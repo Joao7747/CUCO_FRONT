@@ -10,7 +10,7 @@
 </p-toolbar>
 
 <p-sidebar [(visible)]="display" position="left">
-  <img src="../../../assets/images/CUCO-Logo.png" alt="">
+  <a routerLink="/" (click)="display=false"><img src="../../../assets/images/CUCO-Logo.png" alt=""></a>
   <p-panelMenu [model]="items"></p-panelMenu>
 </p-sidebar>
 <!-- <app-mapa></app-mapa> -->

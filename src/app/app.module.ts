@@ -9,6 +9,9 @@ import { MatIconModule} from '@angular/material/icon';
 import { MapaComponent } from './views/home/mapa/mapa.component';
 import {GMapModule} from 'primeng/gmap';
 import { LoginComponent } from './login/login.component';
+import { CadastroComponent } from './login/cadastro/cadastro.component';
+import { DoacoesComponent } from './historico/doacoes/doacoes.component';
+import { RetiradasComponent } from './historico/retiradas/retiradas.component';
 
 //PrimeNg
 import {ButtonModule} from 'primeng/button';
@@ -16,7 +19,9 @@ import { ToolbarModule} from 'primeng/toolbar';
 import {SidebarModule} from 'primeng/sidebar';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {InputTextModule} from 'primeng/inputtext';
-import { CadastroComponent } from './login/cadastro/cadastro.component';
+import {TableModule} from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
+import { ContaComponent } from './conta/conta.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +29,17 @@ import { CadastroComponent } from './login/cadastro/cadastro.component';
     HomeComponent,
     MapaComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    DoacoesComponent,
+    RetiradasComponent,
+    ContaComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     GMapModule,
@@ -38,7 +47,8 @@ import { CadastroComponent } from './login/cadastro/cadastro.component';
     ButtonModule,
     SidebarModule,
     PanelMenuModule,
-    InputTextModule
+    InputTextModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
