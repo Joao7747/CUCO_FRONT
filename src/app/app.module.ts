@@ -11,6 +11,10 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { DoacoesComponent } from './historico/doacoes/doacoes.component';
 import { RetiradasComponent } from './historico/retiradas/retiradas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContaComponent } from './conta/conta.component';
+import { TopMenuComponent } from './menu-navigation/top-menu.component';
+import { HomeComponent } from './home/home.component';
 
 //PrimeNg
 import {ButtonModule} from 'primeng/button';
@@ -19,9 +23,8 @@ import {SidebarModule} from 'primeng/sidebar';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
-import { HttpClientModule } from '@angular/common/http';
-import { ContaComponent } from './conta/conta.component';
-import { TopMenuComponent } from './menu-navigation/top-menu.component';
+import {CardModule} from 'primeng/card';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { TopMenuComponent } from './menu-navigation/top-menu.component';
     DoacoesComponent,
     RetiradasComponent,
     ContaComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    HomeComponent
     
   ],
   imports: [
@@ -48,7 +52,8 @@ import { TopMenuComponent } from './menu-navigation/top-menu.component';
     SidebarModule,
     PanelMenuModule,
     InputTextModule,
-    TableModule
+    TableModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

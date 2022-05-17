@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContaComponent } from './conta/conta.component';
 import { DoacoesComponent } from './historico/doacoes/doacoes.component';
 import { RetiradasComponent } from './historico/retiradas/retiradas.component';
+import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    component: HomeComponent
+  },
   {
     path: "login",
     component: LoginComponent
