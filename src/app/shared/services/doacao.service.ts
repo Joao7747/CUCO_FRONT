@@ -15,4 +15,24 @@ export class DoacaoService {
         .then(res => <HistoricoDoacao[]>res.data)
         .then(data => { return data; });
 }
+
+  cadastrarDoacao(){
+
+  }
+
+  qrCodeLinkDoacao(){
+
+  }
+
+  geraTokenRetirada(){
+
+  }
+
+  validaToken(){
+
+  }
+
+  geraTokenEntrega(){
+    
+  }
 }

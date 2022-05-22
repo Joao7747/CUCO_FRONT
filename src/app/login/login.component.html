@@ -1,21 +1,16 @@
-<form>
+<form [formGroup]="loginForm">
     <div class="form-content">
         <h1>Login</h1> 
         <p> 
-          <input id="user" name="user" required="required" type="text" placeholder="Usuário" pInputText />
+          <input id="user" name="user" formControlName="user" required="required" type="text" placeholder="Usuário" pInputText />
         </p>
          
         <p> 
-          <input id="password" name="password" required="required" type="password" placeholder="Senha" pInputText /> 
+          <input id="password" name="password" formControlName="password" required="required" type="password" placeholder="Senha" pInputText /> 
         </p>
          
         <p> 
-          <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-          <label for="manterlogado">Manter-me logado</label>
-        </p>
-         
-        <p> 
-          <p-button class="pi">Log In</p-button>
+          <p-button (click)="autenticar()">Log In</p-button>
         </p>
          
         <p>

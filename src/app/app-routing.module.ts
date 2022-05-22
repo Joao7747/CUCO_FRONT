@@ -7,11 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { AuthGuard } from './shared/helpers/auth-guard';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "login",
@@ -27,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: "historico/doacoes",
-    component: DoacoesComponent
+    component: DoacoesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "historico/retiradas",

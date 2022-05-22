@@ -11,10 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { DoacoesComponent } from './historico/doacoes/doacoes.component';
 import { RetiradasComponent } from './historico/retiradas/retiradas.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContaComponent } from './conta/conta.component';
 import { TopMenuComponent } from './menu-navigation/top-menu.component';
 import { HomeComponent } from './home/home.component';
+
+import { ReactiveFormsModule, Form, FormsModule } from '@angular/forms';
 
 //PrimeNg
 import {ButtonModule} from 'primeng/button';
@@ -24,6 +26,7 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
+import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 
 
 @NgModule({
@@ -37,7 +40,6 @@ import {CardModule} from 'primeng/card';
     ContaComponent,
     TopMenuComponent,
     HomeComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -53,9 +55,15 @@ import {CardModule} from 'primeng/card';
     PanelMenuModule,
     InputTextModule,
     TableModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
