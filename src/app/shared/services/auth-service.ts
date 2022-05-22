@@ -43,12 +43,13 @@ export class AuthService {
 
     login(user: Login) {
 
-        return this.http.post<Result<any>>('http://localhost:3000/api/v1/login/autenticar/', user)
+        return this.http.post<Result<any>>(environment.api_url + 'login/autenticar/', user)
             .pipe(map(result => {
 
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('token', result.content.token);
                 this.currentTokent.next(result.content.token);
+                window.location.replace('');
                 return result.content.token;
             }));
     }

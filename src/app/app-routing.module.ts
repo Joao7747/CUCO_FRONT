@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: "ongs",
-    component: MapaComponent
+    component: MapaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "historico/doacoes",
@@ -34,11 +35,13 @@ const routes: Routes = [
   },
   {
     path: "historico/retiradas",
-    component: RetiradasComponent
+    component: RetiradasComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "conta",
-    component: ContaComponent
+    component: ContaComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

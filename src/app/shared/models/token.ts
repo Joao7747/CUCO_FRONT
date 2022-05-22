@@ -8,16 +8,15 @@ export class Token{
 }
 
 export class DecodeToken{
-    public token!: Token;
     public GetProperty(properName: string){
-        if(this.token.value != null){
-            var payload = this.token.value.split('.')[1];
-            var tokenobj = JSON.parse(atob(payload));
-            
-            if(properName in tokenobj){
-                return tokenobj[properName];
+            var token = localStorage.getItem("token");
+            if(token){
+                var payload = token!.split('.')[1];
+                var tokenobj = JSON.parse(atob(payload));
+                if(properName in tokenobj){
+                    return tokenobj[properName];
+                }
             }
-        }
         return null;
     }
 }

@@ -17,6 +17,7 @@ import { TopMenuComponent } from './menu-navigation/top-menu.component';
 import { HomeComponent } from './home/home.component';
 
 import { ReactiveFormsModule, Form, FormsModule } from '@angular/forms';
+import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 
 //PrimeNg
 import {ButtonModule} from 'primeng/button';
@@ -26,7 +27,6 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
-import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 
 
 @NgModule({

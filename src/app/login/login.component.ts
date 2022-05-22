@@ -3,7 +3,6 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from '../shared/models/login';
 import { AuthService } from '../shared/services/auth-service';
-import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ import { LoginService } from '../shared/services/login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  
+  showError: boolean = false;
   constructor(private loginS: AuthService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
@@ -28,11 +27,14 @@ export class LoginComponent implements OnInit {
 
 
   autenticar(){
-    let user = {} as Login;
-    user.email = this.control("user").value;
-    user.senha = this.control("password").value;
-    this.loginS.login(user).subscribe();
-    this.router.navigate(['']);
+      let user = {} as Login;
+      user.email = this.control("user").value;
+      user.senha = this.control("password").value;
+      this.loginS.login(user).subscribe(
+        () => {},
+        err => this.showError = true,
+        () => {});
+    
   }
 
   control(control: string) {

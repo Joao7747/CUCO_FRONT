@@ -12,7 +12,7 @@
         <p> 
           <p-button (click)="autenticar()">Log In</p-button>
         </p>
-         
+        <label *ngIf="showError">Usuário e/ou senha incorretos!</label>
         <p>
           Ainda não tem conta?
           <a href="/cadastro">Cadastre-se</a>
