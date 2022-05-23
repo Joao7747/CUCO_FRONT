@@ -1,9 +1,9 @@
 export class Conta{
     nome!: string;
-    cpf!: string;  
-    email!: string; 
+    cpf!: string;
+    email!: string;
     senha!: string; 
-    tipoConta!: string;  
+    tipoConta!: string;
     nomeEstabelecimento!: string;
     tipoEstabelecimento!: string;
     cnpj!: string;
