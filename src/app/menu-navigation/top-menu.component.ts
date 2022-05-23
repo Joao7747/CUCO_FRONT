@@ -62,7 +62,7 @@ export class TopMenuComponent implements OnInit {
           target: '_self',
           command: () => this.display = false
         }]},
-        {label: 'Carteira', icon: 'pi pi-fw pi-dollar', routerLink: 'carteira'},
+        {label: 'Carteira', icon: 'pi pi-fw pi-dollar', routerLink: 'carteira', command: () => this.display = false},
         {label: 'Histórico', 
         items: [
           {

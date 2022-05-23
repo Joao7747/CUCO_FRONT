@@ -42,4 +42,12 @@ export class CarteiraService {
   pegarValorPrato(id: String){
     return this.http.get<Result<any>>(environment.api_url + "Carteira/PegarValorPrato/" + id);
   }
+
+  listaCarteiraRestaurante(id: String){
+    return this.http.get<Result<any>>(environment.api_url + "Carteira/ListaCarteiraIdRestaurante/" + id);
+  }
+
+  listaCarteiraOng(id: String){
+    return this.http.get<Result<any>>(environment.api_url + "Carteira/ListaCarteiraIdOng/" + id);
+  }
 }

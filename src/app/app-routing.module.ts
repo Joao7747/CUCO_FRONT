@@ -12,6 +12,7 @@ import { OngComponent } from './ong/ong.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
 import { DoarComponent } from './doar/doar/doar.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
+import { CarteiraComponent } from './carteira/carteira.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,11 @@ const routes: Routes = [
   {
     path: "qrcode",
     component: QrcodeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "carteira",
+    component: CarteiraComponent,
     canActivate: [AuthGuard]
   }
 ];
