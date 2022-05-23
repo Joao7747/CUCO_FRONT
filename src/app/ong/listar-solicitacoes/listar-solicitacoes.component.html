@@ -1,27 +1,48 @@
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
 <div style="text-align: center;">
-    <h2>ONG's</h2>
-    <p-table [value]="solicitacoes" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+    <h2>Solicitações</h2>
+    <p-table [value]="solicitacoes" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        responsiveLayout="scroll" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[10,25,50]">
         <ng-template pTemplate="header">
-            <tr>
+            <tr *ngIf="tipoConta == 'ONG'">
                 <th>Nome</th>
-                <th>Endereço/th>
+                <th>Endereço</th>
                 <th>Contato</th>
                 <th>Data da Solicitação</th>
                 <th>Meta Final</th>
                 <th>Valor do Prato</th>
                 <th>Ações</th>
             </tr>
+            <tr *ngIf="tipoConta == 'RES'">
+                <th>Data da Solicitação</th>
+                <th>Data da Resposta</th>
+                <th>Resposta Ong</th>
+                <th>Ações</th>
+            </tr>
         </ng-template>
         <ng-template pTemplate="body" let-solicitacoes>
-            <tr>
+            <tr *ngIf="tipoConta == 'ONG'">
                 <td>{{solicitacoes.nomeEstabelecimento}}</td>
                 <td>{{solicitacoes.endereco}}</td>
                 <td>{{solicitacoes.contato}}</td>
                 <td>{{solicitacoes.dataSolicitacao}}</td>
                 <td>{{solicitacoes.metaFinal}}</td>
                 <td>{{solicitacoes.valorPrato}}</td>
-                <td><button pButton class="pi pi-check"></button><button pButton class="pi pi-times"></button></td>
+                <td>
+                    <button pButton class="pi pi-check"
+                        (click)="confirmaSolicitacao(solicitacoes._id)"></button>&nbsp;
+                    <button pButton class="pi pi-times"
+                        (click)="cancelaSolicitacao(solicitacoes._id)"></button>
+                </td>
+            </tr>
+            <tr *ngIf="tipoConta == 'RES'">
+                <td>{{solicitacoes.dataSolicitacao}}</td>
+                <td>{{solicitacoes.dataResposta}}</td>
+                <td>{{solicitacoes.respostaOng}}</td>
+                <td>
+                    <button pButton class="pi pi-trash" (click)="excluiSolicitacao(solicitacoes._id)"></button>
+                </td>
             </tr>
         </ng-template>
         <ng-template pTemplate="paginatorleft">

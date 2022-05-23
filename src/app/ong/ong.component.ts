@@ -30,7 +30,8 @@ export class OngComponent implements OnInit {
       if(data.content){
         alert('Solicitação enviada com sucesso!');
       }
-    })
+    },
+    (err) => alert(err.message))
   }
 
   setValues(ong: ListOngs){

@@ -16,6 +16,7 @@ import { ContaComponent } from './conta/conta.component';
 import { TopMenuComponent } from './menu-navigation/top-menu.component';
 import { HomeComponent } from './home/home.component';
 import { OngComponent } from './ong/ong.component';
+import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-solicitacoes.component';
 
 import { ReactiveFormsModule, Form, FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
@@ -29,7 +30,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
 import {DialogModule} from 'primeng/dialog';
-import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-solicitacoes.component';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-so
     CardModule,
     ReactiveFormsModule,
     FormsModule,
-    DialogModule
+    DialogModule,
+    ConfirmDialogModule
   ],
   providers: [
     {

@@ -25,8 +25,7 @@ export class TopMenuComponent implements OnInit {
         {
           label: 'Solicitações pendentes', 
           icon: 'pi pi-fw pi-plus',
-          // url: 'parcerias/solicitacoes', 
-          routerLink: 'ongs',
+          routerLink: 'solicitacoes',
           target: '_self',
           command: () => this.display = false
         }]},
@@ -59,7 +58,7 @@ export class TopMenuComponent implements OnInit {
         {
           label: 'Solicitações pendentes', 
           icon: 'pi pi-fw pi-plus',
-          routerLink: 'ong/solicitacoes', 
+          routerLink: 'solicitacoes', 
           target: '_self',
           command: () => this.display = false
         }]},
