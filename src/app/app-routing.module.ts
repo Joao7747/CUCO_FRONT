@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
 import { DoarComponent } from './doar/doar/doar.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: "doar/:id",
     component: DoarComponent
+  },
+  {
+    path: "qrcode",
+    component: QrcodeComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

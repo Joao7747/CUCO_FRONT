@@ -28,6 +28,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
 import { DoarComponent } from './doar/doar/doar.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { DoarComponent } from './doar/doar/doar.component';
     ContaComponent,
     TopMenuComponent,
     HomeComponent,
-    DoarComponent
+    DoarComponent,
+    QrcodeComponent
   ],
   imports: [
     BrowserModule,
