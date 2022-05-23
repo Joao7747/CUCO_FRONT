@@ -12,6 +12,7 @@ export class MapaComponent {
 
   overlays: any[] | undefined;
 
+  constructor() {}
     ngOnInit() {
         this.options = {
             center: {lat: -23.533773, lng: -46.625290},

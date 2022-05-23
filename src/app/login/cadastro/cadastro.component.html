@@ -1,0 +1,57 @@
+<p></p>
+    <div class="form-content">
+        <h1>Cadastro</h1> 
+        <select id="tipoConta" [(ngModel)]="tipoConta">
+          <option value="ONG">ONG</option>
+          <option value="RES">Restaurante</option>
+        </select>
+        <br>
+        <form [formGroup]="cadastroForm">
+        <p> 
+          <input id="user" name="user" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="user" required="required" type="text" placeholder="Usuário" pInputText />
+        </p>
+         
+        <p> 
+          <input id="password" name="password" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="password" required="required" type="password" placeholder="Senha" pInputText /> 
+        </p>
+        <p>
+          <input id="confirm_password-password" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" name="confirm_password" formControlName="confirm_password" required="required" type="password" placeholder="Confirme a senha" pInputText /> 
+        </p>
+        <p> 
+          <input id="nome" name="nome" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="nome" required="required" type="text" placeholder="Nome" pInputText /> 
+        </p>
+        <p> 
+          <input id="cpf" name="cpf" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="cpf"  required="required" type="text" placeholder="CPF" pInputText /> 
+        </p>
+        <p> 
+          <input id="cnpj" name="cnpj" formControlName="cnpj" *ngIf="tipoConta == 'RES'" required="required" type="text" placeholder="CNPJ" pInputText /> 
+        </p>
+        <p> 
+          <input id="estabelecimento" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" name="estabelecimento" formControlName="estabelecimento" required="required" type="text" placeholder="Nome do Estabelecimento" pInputText /> 
+        </p>
+        <p> 
+          <input id="cidade" name="cidade" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="cidade" required="required" type="text" placeholder="Cidade" pInputText /> 
+        </p>
+
+        <p> 
+          <input id="estado" name="estado" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="estado" required="required" type="text" placeholder="Estado" pInputText /> 
+        </p>
+
+        <p> 
+          <input id="endereco" name="endereco" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="endereco" required="required" type="text" placeholder="Endereço" pInputText /> 
+        </p>
+
+        <p> 
+          <input id="email" name="email" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="email" required="required" type="text" placeholder="E-mail" pInputText /> 
+        </p>
+
+        <p> 
+          <input id="contato" name="contato" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="contato" required="required" type="text" placeholder="Contato" pInputText /> 
+        </p>
+         
+        <p> 
+          <p-button routerLink="/login" class="pi">Voltar</p-button>&nbsp;
+          <p-button class="pi" id="registrar-btn" (click)="cadastrar()">Registrar</p-button>
+        </p>
+      </form>
+    </div>

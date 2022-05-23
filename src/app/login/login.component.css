@@ -1,0 +1,22 @@
+.form-content{
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 55%;
+    margin: 0 auto 0 auto;
+}
+
+label{color: red;}
+
+
+.child{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

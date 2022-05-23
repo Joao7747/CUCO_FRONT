@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm">
+    <div class="form-content child">
+        <h1>Login</h1> 
+        <p> 
+          <input id="user" name="user" formControlName="user" required="required" type="text" placeholder="Usuário" pInputText />
+        </p>
+         
+        <p> 
+          <input id="password" name="password" formControlName="password" (keyup.enter)="autenticar()" required="required" type="password" placeholder="Senha" pInputText /> 
+        </p>
+         
+        <p> 
+          <p-button (click)="autenticar()" id="login-btn">Log In</p-button>
+        </p>
+        <label *ngIf="showError" id="user-incorreto">Usuário e/ou senha incorretos!</label>
+        <p>
+          Ainda não tem conta?
+          <a href="/cadastro">Cadastre-se</a>
+        </p>
+        <img src="../../assets/images/CUCO-Logo.png" style="width: 100px;">
+        
+    </div>
+    
+</form>

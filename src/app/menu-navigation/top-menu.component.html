@@ -1,0 +1,19 @@
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCj2uvLx6bRIFAdf5GLyLz0_a7Von4nkz0" async defer></script>
+
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+      <p-button icon="pi pi-align-justify" (onClick)="display=true" id="menu-btn"></p-button>
+  </div>
+  <div class="p-toolbar-group-center">
+    Seja bem vindo, {{nome}}!
+  </div>
+  <div class="p-toolbar-group-right">
+    <a routerLink="/"><img src="../../../assets/images/CUCO-Logo.png" alt="" height="75px"></a>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="display" position="left">
+  <a routerLink="/" (click)="display=false"><img src="../../../assets/images/CUCO-Logo.png" alt=""></a>
+  <p-panelMenu [model]="items" [transitionOptions]="'0ms'"></p-panelMenu>
+  
+</p-sidebar>

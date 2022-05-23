@@ -1,0 +1,43 @@
+<div style="text-align: center;">
+    <h2>ONG's</h2>
+    <app-mapa></app-mapa>
+    <p-table [value]="ongs" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Endereço</th>
+                <th>Email</th>
+                <th>Contato</th>
+                <th>Parceria</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-ongs>
+            <tr>
+                <td>{{ongs.nomeEstabelecimento}}</td>
+                <td>{{ongs.cidade}}</td>
+                <td>{{ongs.estado}}</td>
+                <td>{{ongs.endereco}}</td>
+                <td>{{ongs.emailEstabelecimento}}</td>
+                <td>{{ongs.contato}}</td>
+                <td><button pButton class="pi pi-check" (click)="displayDialog = true; setValues(ongs)"></button></td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-dialog header="Parceria" [(visible)]="displayDialog" [modal]="true">
+    <input id="metaFinal" name="metaFinal" [(ngModel)]="solicitacao.metaFinal"  required="required" type="text" placeholder="Meta Final" pInputText />&nbsp;
+    <input id="valorPrato" name="valorPrato" [(ngModel)]="solicitacao.valorPrato" required="required" type="text" placeholder="Valor do Prato" pInputText />
+    <p></p>
+    <button pButton class="pi" (click)="geraSolicitacaoParaOng()">Enviar solitação</button>
+</p-dialog>
+
