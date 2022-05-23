@@ -27,6 +27,7 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
+import { OngComponent } from './ong/ong.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {CardModule} from 'primeng/card';
     RetiradasComponent,
     ContaComponent,
     TopMenuComponent,
-    HomeComponent
+    HomeComponent,
+    OngComponent
   ],
   imports: [
     BrowserModule,

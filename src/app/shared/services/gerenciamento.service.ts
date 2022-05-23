@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { GeraSolicitacaoParceriaRequest } from '../models/gera-solicitacao-parceria-request';
+import { ListOngs } from '../models/lista-ongs';
 import { Result } from '../models/result';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class GerenciamentoService {
   }
 
   listaOngs(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/ListaOngs");
+    return this.http.get<Result<ListOngs[]>>(environment.api_url + "Gerenciamento/ListaOngs");
   }
 
   aceitarSolicitacoesDeEstabelecimentos(){

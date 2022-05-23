@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { OngComponent } from './ong/ong.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: "ongs",
-    component: MapaComponent,
+    component: OngComponent,
     canActivate: [AuthGuard]
   },
   {
