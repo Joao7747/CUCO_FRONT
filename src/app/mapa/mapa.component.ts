@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/services/auth-service';
 import { GerenciamentoService } from '../shared/services/gerenciamento.service';
 
 @Component({
@@ -13,12 +14,13 @@ export class MapaComponent {
 
   overlays: any[] | undefined;
 
-  constructor(private gerenciamentoS: GerenciamentoService) {}
+  constructor(private gerenciamentoS: GerenciamentoService, private authS: AuthService) {}
     ngOnInit() {
         this.options = {
             center: {lat: -23.533773, lng: -46.625290},
             zoom: 12
         };
+        console.log(this.authS.usuarioLogado, this.authS.mostrarMenuEmitter)
     }
 
   listaongs(){
