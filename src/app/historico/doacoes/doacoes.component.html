@@ -6,12 +6,14 @@
             <tr>
                 <th>Valor</th>
                 <th>Data</th>
+                <th>Nome do Doador</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-doacoes>
             <tr>
                 <td>{{doacoes.valorDoacao}}</td>
                 <td>{{doacoes.dataDoacao}}</td>
+                <td>{{doacoes.nomeDoador}}</td>
             </tr>
         </ng-template>
         <ng-template pTemplate="paginatorleft">

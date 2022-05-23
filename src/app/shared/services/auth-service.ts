@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -7,9 +7,12 @@ import { environment } from 'src/environments/environment';
 import { Token,DecodeToken } from '../models/token'
 import { Result } from '../models/result';
 import { Login } from '../models/login';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+    public usuarioLogado: boolean = false;
+    mostrarMenuEmitter = new EventEmitter<boolean>(false);
 
     public currentTokent: BehaviorSubject<any>;
 
@@ -17,9 +20,12 @@ export class AuthService {
         return this.currentTokent.value;
     }
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router) {
         const token = localStorage.getItem('token');     
         this.currentTokent = new BehaviorSubject<any>(token);
+        if(this.usuarioLogado == true){
+            this.mostrarMenuEmitter.emit(true);
+        }
     }
 
     // setTotken(token:string){
@@ -49,7 +55,9 @@ export class AuthService {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('token', result.content.token);
                 this.currentTokent.next(result.content.token);
-                window.location.replace('');
+                this.usuarioLogado = true;
+                this.mostrarMenuEmitter.emit(true);
+                this.router.navigate(['']);
                 return result.content.token;
             }));
     }

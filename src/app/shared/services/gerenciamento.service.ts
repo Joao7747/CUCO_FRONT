@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { GeraSolicitacaoParceriaRequest } from '../models/gera-solicitacao-parceria-request';
+import { HistoricoDoacao } from '../models/historico-doacao';
+import { ListOngs } from '../models/lista-ongs';
 import { Result } from '../models/result';
 
 @Injectable({
@@ -11,24 +13,24 @@ export class GerenciamentoService {
 
   constructor(private http: HttpClient) { }
 
-  historicoDoacoes(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/HistoricoDoacoes");
+  historicoDoacoes(id: string){
+    return this.http.get<Result<HistoricoDoacao[]>>(environment.api_url + "Gerenciamento/HistoricoDoacoes/" + id);
   }
 
-  historicoRetiradas(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/HistoricoRetiradas");
+  historicoRetiradas(id: string){
+    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/HistoricoRetiradas/" + id);
   }
 
   listaOngs(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/ListaOngs");
+    return this.http.get<Result<ListOngs[]>>(environment.api_url + "Gerenciamento/ListaOngs");
   }
 
-  aceitarSolicitacoesDeEstabelecimentos(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/AceitarSolicitacoesDeEstabelecimentos");
+  aceitarSolicitacoesDeEstabelecimentos(id: string){
+    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/AceitarSolicitacoesDeEstabelecimentos/" + id);
   }
 
-  recusarSolicitacoesDeEstabelecimentos(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/RecusaSolicitacoesDeEstabelecimentos");
+  recusarSolicitacoesDeEstabelecimentos(id: string){
+    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/RecusaSolicitacoesDeEstabelecimentos/" + id);
   }
 
   excluirSolicitacoesDeEstabelecimentos(id: string){
@@ -43,7 +45,11 @@ export class GerenciamentoService {
     return this.http.post<Result<any>>(environment.api_url + "Gerenciamento/GeraSolicitacaoParceriaParaOng", solicitacao);
   }
 
-  listaSolicitacoes(){
-    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/listaSolicitacoesParaOng");
+  listaSolicitacaoParaRes(id: string){
+    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/listaSolicitacoesParaEstabelecimento/" + id);
+  }
+
+  listaSolicitacoes(id: string){
+    return this.http.get<Result<any>>(environment.api_url + "Gerenciamento/listaSolicitacoesParaOng/"+id);
   }
 }

@@ -15,6 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContaComponent } from './conta/conta.component';
 import { TopMenuComponent } from './menu-navigation/top-menu.component';
 import { HomeComponent } from './home/home.component';
+import { OngComponent } from './ong/ong.component';
+import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-solicitacoes.component';
 
 import { ReactiveFormsModule, Form, FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
@@ -29,6 +31,8 @@ import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
 import { DoarComponent } from './doar/doar/doar.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
+import {DialogModule} from 'primeng/dialog';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -44,6 +48,8 @@ import { QrcodeComponent } from './qrcode/qrcode.component';
     HomeComponent,
     DoarComponent,
     QrcodeComponent
+    OngComponent,
+    ListarSolicitacoesComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +67,9 @@ import { QrcodeComponent } from './qrcode/qrcode.component';
     TableModule,
     CardModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DialogModule,
+    ConfirmDialogModule
   ],
   providers: [
     {

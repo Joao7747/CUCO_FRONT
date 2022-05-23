@@ -12,15 +12,9 @@ export class DoacaoService {
 
   constructor(private http: HttpClient) { }
 
-  getDoacoes() {
-    return this.http.get<any>('assets/table-mock.json')
-        .toPromise()
-        .then(res => <HistoricoDoacao[]>res.data)
-        .then(data => { return data; });
-}
-
   cadastrarDoacao(doacao: CadastraDoacao, id: String){
     return this.http.post<Result<any>>(environment.api_url + "Doacao/CadastraDoacao/" + id, doacao);
+
   }
 
   qrCodeLinkDoacao(){

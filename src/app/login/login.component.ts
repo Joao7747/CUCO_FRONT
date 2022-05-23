@@ -6,6 +6,7 @@ import { AuthService } from '../shared/services/auth-service';
 
 @Component({
   selector: 'app-login',
+  template: '',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -34,7 +35,6 @@ export class LoginComponent implements OnInit {
         () => {},
         err => this.showError = true,
         () => {});
-    
   }
 
   control(control: string) {

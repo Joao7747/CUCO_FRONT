@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-solicitacoes.component';
+import { OngComponent } from './ong/ong.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
 import { DoarComponent } from './doar/doar/doar.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
@@ -27,9 +29,15 @@ const routes: Routes = [
   },
   {
     path: "ongs",
-    component: MapaComponent,
+    component: OngComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: "solicitacoes",
+    component: ListarSolicitacoesComponent,
+    canActivate: [AuthGuard]
+  },
+
   {
     path: "historico/doacoes",
     component: DoacoesComponent,

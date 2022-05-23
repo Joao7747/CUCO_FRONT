@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoricoDoacao } from 'src/app/shared/models/historico-doacao';
-import { DoacaoService } from 'src/app/shared/services/doacao.service';
+import { DecodeToken } from 'src/app/shared/models/token';
+import { GerenciamentoService } from 'src/app/shared/services/gerenciamento.service';
 
 @Component({
   selector: 'app-doacoes',
@@ -11,10 +12,17 @@ export class DoacoesComponent implements OnInit {
 
   doacoes: HistoricoDoacao[] = [];
 
-  constructor(private doacaoService: DoacaoService) { }
+  constructor(private gerenciamentoS: GerenciamentoService) { }
 
   ngOnInit(): void {
-    this.doacaoService.getDoacoes().then(doacoes => this.doacoes = doacoes);
+    this.listaHistorico();
   }
 
+  listaHistorico(){
+    let decode = new DecodeToken();
+    let id = decode.GetProperty("idestabelecimento");
+    this.gerenciamentoS.historicoDoacoes(id).subscribe(data => {
+      this.doacoes = data.content;
+    })
+  }
 }
