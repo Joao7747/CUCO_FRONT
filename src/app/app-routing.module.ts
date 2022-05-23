@@ -8,6 +8,7 @@ import { CadastroComponent } from './login/cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
+import { DoarComponent } from './doar/doar/doar.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     path: "conta",
     component: ContaComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "doar/:id",
+    component: DoarComponent
   }
 ];
 

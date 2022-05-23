@@ -9,6 +9,7 @@ import { Result } from '../models/result';
 })
 export class CarteiraService {
 
+  
   constructor(private http: HttpClient) { }
 
   insereCarteira(carteira: Carteira){
@@ -37,5 +38,8 @@ export class CarteiraService {
 
   editaValorPrato(valor: number){
     return this.http.put<Result<any>>(environment.api_url + "Carteira/EditaValorPrato", valor);
+  }
+  pegarValorPrato(id: String){
+    return this.http.get<Result<any>>(environment.api_url + "Carteira/PegarValorPrato/" + id);
   }
 }
