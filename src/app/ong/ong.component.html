@@ -11,6 +11,7 @@
                 <th>Endereço</th>
                 <th>Email</th>
                 <th>Contato</th>
+                <th>Parceria</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-ongs>
@@ -21,6 +22,7 @@
                 <td>{{ongs.endereco}}</td>
                 <td>{{ongs.emailEstabelecimento}}</td>
                 <td>{{ongs.contato}}</td>
+                <td><button pButton class="pi pi-check" (click)="displayDialog = true; setValues(ongs)"></button></td>
             </tr>
         </ng-template>
         <ng-template pTemplate="paginatorleft">
@@ -31,3 +33,11 @@
         </ng-template>
     </p-table>
 </div>
+
+<p-dialog header="Parceria" [(visible)]="displayDialog" [modal]="true">
+    <input id="metaFinal" name="metaFinal" [(ngModel)]="solicitacao.metaFinal"  required="required" type="text" placeholder="Meta Final" pInputText />&nbsp;
+    <input id="valorPrato" name="valorPrato" [(ngModel)]="solicitacao.valorPrato" required="required" type="text" placeholder="Valor do Prato" pInputText />
+    <p></p>
+    <button pButton class="pi" (click)="geraSolicitacaoParaOng()">Enviar solitação</button>
+</p-dialog>
+

@@ -44,7 +44,7 @@ export class CadastroComponent implements OnInit {
       let conta = {} as Conta;
       conta.cidade = this.control("cidade").value
       if(this.control("cnpj").value == null){
-        conta.cnpj = "0";
+        conta.cnpj = Math.random().toString();
       }
       else{
         conta.cnpj = this.control("cnpj").value

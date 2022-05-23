@@ -52,7 +52,7 @@ export class TopMenuComponent implements OnInit {
           {
           label: 'Procurar ONG', 
           icon: 'pi pi-fw pi-plus',
-          routerLink: 'ong/procurar', 
+          routerLink: 'ongs', 
           target: '_self',
           command: () => this.display = false
         },
