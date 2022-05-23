@@ -10,6 +10,8 @@ import { MapaComponent } from './mapa/mapa.component';
 import { ListarSolicitacoesComponent } from './ong/listar-solicitacoes/listar-solicitacoes.component';
 import { OngComponent } from './ong/ong.component';
 import { AuthGuard } from './shared/helpers/auth-guard';
+import { DoarComponent } from './doar/doar/doar.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 const routes: Routes = [
   {
@@ -49,6 +51,15 @@ const routes: Routes = [
   {
     path: "conta",
     component: ContaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "doar/:id",
+    component: DoarComponent
+  },
+  {
+    path: "qrcode",
+    component: QrcodeComponent,
     canActivate: [AuthGuard]
   }
 ];

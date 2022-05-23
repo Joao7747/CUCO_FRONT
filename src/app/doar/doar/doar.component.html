@@ -1,0 +1,32 @@
+<p></p>
+<form [formGroup]="doarForm">
+    <div class="form-content">
+        <br>
+        <h1 class="titulo">Faça a sua parte!</h1> 
+        <br>
+        <p> 
+          <input id="name" name="name" required="required" type="text" placeholder="Nome Completo" pInputText formControlName="name"/>
+        </p>
+         
+        <p> 
+          <input id="cpf" name="cpf" required="required" type="text" placeholder="CPF" pInputText formControlName="cpf"/> 
+        </p>
+
+        <p> 
+          <input id="email" name="email" required="required" type="email" placeholder="Email" pInputText formControlName="email"/> 
+        </p>
+
+        <p> 
+          <input id="qtdeDoacao" name="qtdeDoacao" required="required" (keyup.enter)="valorTotal($event)" type="number" placeholder="Quanto pretende doar" pInputText formControlName="qtdeDoacao"/>
+        </p>
+
+        <p>
+          <input id="valorTotal" name="valorTotal" type="text" formControlName="valorTotal"/>
+        </p>
+        
+        <p> 
+          <p-button  class="pi">Doar!</p-button>
+        </p>
+    </div>
+    
+</form>
