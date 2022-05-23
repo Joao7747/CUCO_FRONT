@@ -47,7 +47,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     TopMenuComponent,
     HomeComponent,
     DoarComponent,
-    QrcodeComponent
+    QrcodeComponent,
     OngComponent,
     ListarSolicitacoesComponent
   ],
