@@ -30,10 +30,10 @@
                 <td>{{solicitacoes.metaFinal}}</td>
                 <td>{{solicitacoes.valorPrato}}</td>
                 <td>
-                    <button pButton class="pi pi-check"
-                        (click)="confirmaSolicitacao(solicitacoes._id)"></button>&nbsp;
-                    <button pButton class="pi pi-times"
-                        (click)="cancelaSolicitacao(solicitacoes._id)"></button>
+                    <button title="confirmarSolicitacao" pButton class="pi pi-check"
+                        (click)="confirmaSolicitacao(solicitacoes.idSolicitacao)"></button>&nbsp;
+                    <button title="deletarSolicitacao" pButton class="pi pi-times"
+                        (click)="cancelaSolicitacao(solicitacoes.idSolicitacao)"></button>
                 </td>
             </tr>
             <tr *ngIf="tipoConta == 'RES'">
@@ -41,7 +41,7 @@
                 <td>{{solicitacoes.dataResposta}}</td>
                 <td>{{solicitacoes.respostaOng}}</td>
                 <td>
-                    <button pButton class="pi pi-trash" (click)="excluiSolicitacao(solicitacoes._id)"></button>
+                    <button title="xxx" pButton class="pi pi-trash" (click)="excluiSolicitacao(solicitacoes._id)"></button>
                 </td>
             </tr>
         </ng-template>
