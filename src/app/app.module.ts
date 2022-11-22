@@ -33,6 +33,8 @@ import { DoarComponent } from './doar/doar/doar.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 import {DialogModule} from 'primeng/dialog';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ProgressBarModule} from 'primeng/progressbar';
+import { CarteiraComponent } from './carteira/carteira.component';
 
 
 @NgModule({
@@ -47,9 +49,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     TopMenuComponent,
     HomeComponent,
     DoarComponent,
-    QrcodeComponent
+    QrcodeComponent,
     OngComponent,
-    ListarSolicitacoesComponent
+    ListarSolicitacoesComponent,
+    CarteiraComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     ReactiveFormsModule,
     FormsModule,
     DialogModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ProgressBarModule
   ],
   providers: [
     {

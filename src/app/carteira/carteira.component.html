@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <label for="valorAtual">Valor Atual:</label><br>
+            <input id="valorAtual" name="valorAtual" [(ngModel)]="carteira[0].valorAtual" pInputText disabled>
+        </div>
+        <div class="col-3">
+            <label for="metaFinal">Meta Final :</label><br>
+            <input id="metaFinal" name="metaFinal" [(ngModel)]="carteira[0].metaFinal" pInputText disabled>
+        </div>
+        <div class="col-3">
+            <label for="entregasPendentes">Entregas Pendentes:</label>
+            <input id="entregasPendentes" name="entregasPendentes" [(ngModel)]="carteira[0].entregasPendentes" pInputText disabled>
+        </div>
+        <div class="col-3">
+            <label for="valorPrato">Valor do Prato:</label>
+            <input id="valorPrato" name="valorPrato" [(ngModel)]="carteira[0].valorPrato" pInputText disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="text-align: center; margin-top: 150px;">
+            
+            <h4>Progresso</h4>
+            <p-progressBar [value]="value"></p-progressBar>
+        </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@ export class QrcodeComponent implements OnInit {
 
     let id = decode.GetProperty("idestabelecimento");
     console.log(id);
-    this.url = "http://localhost:4200/doar/" + id;
+    this.url = "https://lively-coast-01b431d10.1.azurestaticapps.net/doar/" + id;
     console.log(this.url);
 
   }
