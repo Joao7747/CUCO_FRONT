@@ -14,7 +14,6 @@ export class DoacaoService {
 
   cadastrarDoacao(doacao: CadastraDoacao, id: String){
     return this.http.post<Result<any>>(environment.api_url + "Doacao/CadastraDoacao/" + id, doacao);
-
   }
 
   qrCodeLinkDoacao(){
