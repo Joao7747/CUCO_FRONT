@@ -42,6 +42,7 @@ export class GerenciamentoService {
   }
 
   geraSolicitacaoParaOng(solicitacao: GeraSolicitacaoParceriaRequest){
+    
     return this.http.post<Result<any>>(environment.api_url + "Gerenciamento/GeraSolicitacaoParceriaParaOng", solicitacao);
   }
 

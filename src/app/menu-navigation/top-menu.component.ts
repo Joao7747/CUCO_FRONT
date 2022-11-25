@@ -80,7 +80,7 @@ export class TopMenuComponent implements OnInit {
           command: () => this.display = false
         },
         ]},
-        {label: 'Doar', icon: 'pi pi-fw pi-user', routerLink: '/conta', target: '_self', command: () => this.display = false},
+        {label: 'Doar', icon: 'pi pi-fw pi-user', routerLink: '/qrcode', target: '_self', command: () => this.display = false},
         {label: 'Conta', icon: 'pi pi-fw pi-user', routerLink: '/conta', target: '_self', command: () => this.display = false },
         {label: 'Logout', icon: 'pi pi-fw pi-power-off', command: () => this.logout(), routerLink: '/login',  target: '_self'}
     ];
