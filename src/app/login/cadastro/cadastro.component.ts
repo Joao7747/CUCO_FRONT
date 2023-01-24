@@ -26,6 +26,7 @@ export class CadastroComponent implements OnInit {
       nome: [null],
       cpf: [null],
       cnpj: [null],
+      cep: [null],
       cidade: [null],
       estado: [null],
       endereco: [null],
