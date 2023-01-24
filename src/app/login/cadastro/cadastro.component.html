@@ -8,7 +8,7 @@
       </select>
 
       <br>
-      <form [formGroup]="cadastroForm">
+      <form #f [formGroup]="cadastroForm">
       <p> 
         <input id="user" name="user" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" formControlName="user" required="required" type="text" placeholder="Usuário" pInputText />
       </p>
@@ -32,7 +32,7 @@
         <input id="estabelecimento" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" name="estabelecimento" formControlName="estabelecimento" required="required" type="text" placeholder="Nome do Estabelecimento" pInputText /> 
       </p>
       <p> 
-        <input id="cep" maxlength="9" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" name="cep" formControlName="cep" required="required" type="text" placeholder="CEP" pInputText /> 
+        <input id="cep" maxlength="9" (blur)="consultaCep(applyFilter($event), f)" *ngIf="tipoConta === 'ONG' || tipoConta == 'RES'" name="cep" formControlName="cep" required="required" type="text" placeholder="CEP" pInputText /> 
       </p>
 
       <p> 
@@ -62,14 +62,13 @@
     </form>
 </div>
 
-
+<!-- 
 <script> 
       
-    const cep = document.querySelector("#cep")
-    
+    const cep = document.getElementById("#cep")
 
       cep.addEventListener("blur",(e)=>{
-          console.log(cep)
+          
           let search = cep.value.replace("-","")
           const options = {
               method: 'GET',
@@ -82,9 +81,10 @@
               .then( data => console.log(data))
           })
           .catch(e => console.log('Deu Erro: '+ e,message))
-      })
       
-</script>
+    })
+      
+</script> -->
 
 
 

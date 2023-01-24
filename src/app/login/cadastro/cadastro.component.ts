@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Conta } from 'src/app/shared/models/criar-conta-request';
+import { CadastroService } from 'src/app/shared/services/cadastro.service';
 import { ContaService } from 'src/app/shared/services/conta.service';
 
 @Component({
@@ -12,7 +13,23 @@ import { ContaService } from 'src/app/shared/services/conta.service';
 export class CadastroComponent implements OnInit {
   cadastroForm!: FormGroup;
   tipoConta!: string;
-  constructor(private fb: FormBuilder, private contaS: ContaService, private route: Router) { }
+  constructor(private cepService: CadastroService, private fb: FormBuilder, private contaS: ContaService, private route: Router) { }
+
+  consultaCep(valor: any, form: HTMLFormElement ){
+    this.cepService.buscar(valor).subscribe((dados) => this.populaForm(dados, form));
+  }
+
+  populaForm(dados: any, form: HTMLFormElement){
+    form.elements["cidade"] = dados.localidade;
+    form.elements["estado"] = dados.uf;
+    form.elements["endereco"] = dados.logradouro;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    return filterValue;
+}
+
 
   ngOnInit(): void {
     this.cadastroForm = this.createForm();
@@ -73,4 +90,6 @@ export class CadastroComponent implements OnInit {
   control(control: string) {
     return this.cadastroForm.get(control) as AbstractControl;
   }
+
+ 
 }
